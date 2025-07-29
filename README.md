@@ -49,14 +49,15 @@ spotify-random-playlist/
 
 ### 🔹 Step 2: Clone This Repository
 
-  <pre>
-  ```bash
-  git clone https://github.com/natashal219/spotify-random-playlist.git
-  ```
-  </pre>
+<pre><code>
+git clone https://github.com/natashal219/spotify-random-playlist.git
+</pre></code>
 
 ### 🔹 Step 3: Install Dependencies
-pip install spotipy python-dotenv
+
+<pre><code>
+pip install r-requirements.txt
+</pre></code>
 
 ### 🔹 Step 4: Setup .env file
 
