@@ -32,7 +32,8 @@ spotify-random-playlist/
 ├── README.md              # This file!
 ├── requirements.txt       # Dependencies for the project
 ├── random_playlist
-
+</pre></code>
+  
 ---
 ## 🧱 Steps to Build This Project
 
