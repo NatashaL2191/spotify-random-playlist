@@ -56,7 +56,7 @@ git clone https://github.com/natashal219/spotify-random-playlist.git
 ### 🔹 Step 3: Install Dependencies
 
 <pre><code>
-pip install r-requirements.txt
+pip install -r requirements.txt
 </pre></code>
 
 ### 🔹 Step 4: Setup .env file
