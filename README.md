@@ -23,7 +23,17 @@ This is a beginner Python project that uses the Spotify Web API to create a play
 - Spotify Developer Dashboard (for API credentials)
 
 ---
+<pre><code>
+## 📁 Project Structure
 
+spotify-random-playlist/
+├── .env                   # 🔒 Your secret credentials (ignored by Git)
+├── .gitignore             # Tells Git to ignore files like .env
+├── README.md              # This file!
+├── requirements.txt       # Dependencies for the project
+├── random_playlist
+
+---
 ## 🧱 Steps to Build This Project
 
 ### 🔹 Step 1: Set Up a Spotify Developer App
