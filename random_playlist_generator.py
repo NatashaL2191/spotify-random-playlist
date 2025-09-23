@@ -4,6 +4,7 @@ import os
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 import random
+import tkinter as tk
 
 # Load environment variables from .env file
 load_dotenv()
@@ -12,7 +13,7 @@ load_dotenv()
 SPOTIPY_CLIENT_ID = os.getenv('SPOTIPY_CLIENT_ID')
 SPOTIPY_CLIENT_SECRET = os.getenv('SPOTIPY_CLIENT_SECRET')
 SPOTIPY_REDIRECT_URI = os.getenv('SPOTIPY_REDIRECT_URI')
-SCOPE = os.getenv('SPOTIPY_SCOPE')
+SCOPE = "playlist-modify-public" 
 
 # Initialize Spotify client
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=SPOTIPY_CLIENT_ID, client_secret=SPOTIPY_CLIENT_SECRET, redirect_uri=SPOTIPY_REDIRECT_URI, scope=SCOPE))
@@ -49,4 +50,26 @@ def create_random_playlist(user_id, playlist_name, genres, trackcount):
     sp.playlist_add_items(playlist['id'], selected_tracks)
     
     print(f"Playlist '{playlist_name}' created with {len(selected_tracks)} random songs!")
+
+    if len(all_tracks) < trackcount:
+        print(f"Warning: Only {len(all_tracks)} tracks found for the given genre(s).")
+        track_to_select = len(all_tracks)
+    else:
+        track_to_select = trackcount
+
+    # Pick random tracks if tracks were found
+    if all_tracks:
+        selected_tracks = random.sample(all_tracks, track_to_select)
+        
+        # Add tracks to the new playlist
+        sp.playlist_add_items(playlist['id'], selected_tracks)
+        
+        print(f"Playlist '{playlist_name}' created with {len(selected_tracks)} random songs!")
+    else:
+        print("No tracks found for the specified genres. No playlist was created.")
+
+playlist_name = input("Enter Playlist Name: ")
+genre = input("Enter Genre: ")
+user_id = user['id']
+create_random_playlist(user_id, playlist_name, genre, trackcount=20)
 
