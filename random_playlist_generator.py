@@ -4,7 +4,8 @@ import os
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 import random
-import tkinter as tk
+import streamlit as st
+
 
 # Load environment variables from .env file
 load_dotenv()
@@ -20,9 +21,11 @@ sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=SPOTIPY_CLIENT_ID, clie
 user = sp.current_user()
 print("Logged in as:", user["display_name"])
 
+st.title("Random Playlist Generator")
+st.write("Logged in as: ", {user['display_name']})
 
 
-def create_random_playlist(user_id, playlist_name, genres, trackcount):
+def create_random_playlist(user_id, playlist_name, genres, trackcount,public=True):
 
     """
     Create a random Spotify playlist from given genres.
@@ -67,9 +70,26 @@ def create_random_playlist(user_id, playlist_name, genres, trackcount):
         print(f"Playlist '{playlist_name}' created with {len(selected_tracks)} random songs!")
     else:
         print("No tracks found for the specified genres. No playlist was created.")
+    return playlist, selected_tracks
 
-playlist_name = input("Enter Playlist Name: ")
-genre = input("Enter Genre: ")
+playlist_name = st.text_input("Enter Playlist Name: ")
+genre_input = st.text_input("Enter Genre: ")
+public = st.checkbox("Public Playlist", True)
+trackcount = st.slider("Trackcount", 5,50,20)
 user_id = user['id']
-create_random_playlist(user_id, playlist_name, genre, trackcount=20)
 
+
+if st.button("🎶 Generate Playlist"):
+    genres = [g.strip() for g in genre_input.split(",")]
+    playlist, selected_tracks = create_random_playlist(user['id'], playlist_name, genres, trackcount, public)
+
+    if playlist:
+        st.success(f"✅ Playlist '{playlist_name}' created with {len(selected_tracks)} random songs!")
+        st.markdown(f"[Open Playlist in Spotify]({playlist['external_urls']['spotify']})")
+
+        st.write("Songs added:")
+        for uri in selected_tracks:
+            track = sp.track(uri)
+            st.write(f"- {track['name']} by {', '.join([a['name'] for a in track['artists']])}")
+    else:
+        st.error("❌ No tracks found for the given genres.")
