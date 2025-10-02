@@ -2,7 +2,7 @@
 
 This is a beginner Python project that uses the Spotify Web API to create a playlist of random songs from your saved tracks.
 
-> Built and maintained by [@natashal219](https://github.com/natashal2191)
+> Built and maintained by [@natashal2191](https://github.com/natashal2191)
 
 ---
 
