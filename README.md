@@ -62,5 +62,6 @@ pip install -r requirements.txt
 ### 🔹 Step 4: Setup .env file
 
 ### 🔹 Step 5: Run Python Script
+To run GUI on browser run "streamlit run <file>" in bash terminal.
 
 
