@@ -1,4 +1,4 @@
-# 🎧 Random Spotify Playlist Generator
+# Random Spotify Playlist Generator
 
 This is a beginner Python project that uses the Spotify Web API to create a playlist of random songs from your saved tracks.
 
@@ -25,7 +25,7 @@ This is a beginner Python project that uses the Spotify Web API to create a play
 
 ---
 <pre><code>
-## 📁 Project Structure
+## Project Structure
 
 spotify-random-playlist/
 ├── .env                   # Your secret credentials (ignored by Git)
