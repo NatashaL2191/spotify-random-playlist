@@ -61,6 +61,7 @@ pip install -r requirements.txt
 </pre></code>
 
 ### Step 4: Setup .env file
+Fill out given credentials according to Spotify API
 
 ### Step 5: Run Python Script
 To run GUI on browser run <pre><code>"streamlit run [file]"</pre></code> in bash terminal.
