@@ -6,7 +6,7 @@ This is a beginner Python project that uses the Spotify Web API to create a play
 
 ---
 
-## 🚀 What It Does
+## What It Does
 
 - Logs into your Spotify account securely using OAuth
 - Pulls a list of your liked (saved) tracks
@@ -15,7 +15,7 @@ This is a beginner Python project that uses the Spotify Web API to create a play
 
 ---
 
-## 🧰 Tech Stack & Tools
+## Tech Stack & Tools
 
 - Python 3.x
 - [Spotipy](https://spotipy.readthedocs.io/) (Spotify Web API wrapper)
@@ -28,7 +28,7 @@ This is a beginner Python project that uses the Spotify Web API to create a play
 ## 📁 Project Structure
 
 spotify-random-playlist/
-├── .env                   # 🔒 Your secret credentials (ignored by Git)
+├── .env                   # Your secret credentials (ignored by Git)
 ├── .gitignore             # Tells Git to ignore files like .env
 ├── README.md              # This file!
 ├── requirements.txt       # Dependencies for the project
@@ -36,9 +36,9 @@ spotify-random-playlist/
 </pre></code>
   
 ---
-## 🧱 Steps to Build This Project
+## Steps to Build This Project
 
-### 🔹 Step 1: Set Up a Spotify Developer App
+### Step 1: Set Up a Spotify Developer App
 
 1. Go to the [Spotify Developer Dashboard](https://developer.spotify.com/dashboard)
 2. Click **"Create an App"**
@@ -48,21 +48,21 @@ spotify-random-playlist/
 
 ---
 
-### 🔹 Step 2: Clone This Repository
+### Step 2: Clone This Repository
 
 <pre><code>
 git clone https://github.com/natashal219/spotify-random-playlist.git
 </pre></code>
 
-### 🔹 Step 3: Install Dependencies
+### Step 3: Install Dependencies
 
 <pre><code>
 pip install -r requirements.txt
 </pre></code>
 
-### 🔹 Step 4: Setup .env file
+### Step 4: Setup .env file
 
-### 🔹 Step 5: Run Python Script
+### Step 5: Run Python Script
 To run GUI on browser run <pre><code>"streamlit run [file]"</pre></code> in bash terminal.
 
 
